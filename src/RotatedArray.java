@@ -1,7 +1,19 @@
 import java.util.*;
 
 public class RotatedArray {
+/*
+Brute force approach -> O(n)
+for(int i =0;i<array.length-1;i++)
+{
+   if(array[i]==target)
+   {
+         return i
+   }
+   return -1;
+}
+ */
 
+    //Modified Binary Search -> O(log N)
     public  int solve(int[] array,int target)
     {
         int start = 0;
@@ -19,7 +31,7 @@ public class RotatedArray {
                 else
                     start = mid + 1;
             }
-            else {
+            else {    //right part of array would be sorted
                 if (target > array[mid] && target <= array[end]) {
                     start = mid + 1;
                 } else {
